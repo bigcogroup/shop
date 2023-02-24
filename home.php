@@ -83,8 +83,7 @@
                 $distance = $earth_radius * $c;
 
                 // Output the distance in meters
-                echo "The distance between the two points is " . $distance . " meters.";
-                
+
                 echo "Location ID: " . $row["id"] . " - Latitude: " . $row["latitude"] . " - Longitude: " . $row["longitude"] . "<br>";
                 $place = $row['id'];
                 $mysql = "SELECT * FROM product where place_id = $place";
@@ -95,6 +94,7 @@
                     ?>
                     <div class="card">
                         <div class="image">
+                            <p>The distance between the two points is <?php echo $rounded = round($distance , 2)?>  meters.</p>
                             <img src="<?php echo $rows["product_image"]; ?>" alt="">
                         </div>
                         <div class="caption">
